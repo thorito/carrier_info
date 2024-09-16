@@ -6,15 +6,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
+  const MyApp({super.key});
+
   @override
-  _MyAppState createState() => _MyAppState();
+  MyAppState createState() => MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class MyAppState extends State<MyApp> {
   IosCarrierData? _iosInfo;
   IosCarrierData? get iosInfo => _iosInfo;
   set iosInfo(IosCarrierData? iosInfo) {
@@ -40,7 +42,7 @@ class _MyAppState extends State<MyApp> {
       if (Platform.isAndroid) androidInfo = await CarrierInfo.getAndroidInfo();
       if (Platform.isIOS) iosInfo = await CarrierInfo.getIosInfo();
     } catch (e) {
-      print(e.toString());
+      debugPrint(e.toString());
     }
 
     // If the widget was removed from the tree while the asynchronous platform
@@ -87,8 +89,8 @@ class IosUI extends StatelessWidget {
     return ListView(
       children: [
         const SizedBox(height: 20),
-        Padding(
-          padding: const EdgeInsets.all(15),
+        const Padding(
+          padding: EdgeInsets.all(15),
           child: Text(
             'CARRIER INFORMATION',
             style: TextStyle(
@@ -114,7 +116,7 @@ class IosUI extends StatelessWidget {
               const SizedBox(height: 15),
               Text(
                 'SIM: ${it.carrierName}',
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 15,
                   color: CupertinoColors.systemGrey,
                 ),
@@ -150,8 +152,8 @@ class AndroidUI extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Padding(
-              padding: const EdgeInsets.all(15),
+            const Padding(
+              padding: EdgeInsets.all(15),
               child: Text(
                 'CARRIER INFORMATION',
                 style: TextStyle(
@@ -188,7 +190,7 @@ class AndroidUI extends StatelessWidget {
                   children: [
                     Text(
                       'SIM: ${it.phoneNumber} (from telephonyInfo)',
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 15,
                         color: CupertinoColors.systemGrey,
                       ),
@@ -209,7 +211,7 @@ class AndroidUI extends StatelessWidget {
                 children: [
                   Text(
                     'SIM: ${it.phoneNumber} (from subscriptionsInfo)',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 15,
                       color: CupertinoColors.systemGrey,
                     ),
@@ -258,7 +260,7 @@ class HomeItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(title),
-                  Spacer(),
+                  const Spacer(),
                   Flexible(
                     child: Wrap(
                       alignment: WrapAlignment.start,
