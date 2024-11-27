@@ -4,6 +4,7 @@ import 'dart:io';
 import 'package:carrier_info/carrier_info.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:permission_handler/permission_handler.dart';
 
 void main() {
   runApp(const MyApp());
@@ -39,8 +40,17 @@ class MyAppState extends State<MyApp> {
   Future<void> initPlatformState() async {
     // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      if (Platform.isAndroid) androidInfo = await CarrierInfo.getAndroidInfo();
-      if (Platform.isIOS) iosInfo = await CarrierInfo.getIosInfo();
+      final location = await Permission.location.request().isGranted;
+      final phone = await Permission.phone.request().isGranted;
+      final locationWhenInUse =
+          await Permission.locationWhenInUse.request().isGranted;
+      if (location && phone && locationWhenInUse) {
+        if (Platform.isAndroid) {
+          androidInfo = await CarrierInfo.getAndroidInfo();
+        } else if (Platform.isIOS) {
+          iosInfo = await CarrierInfo.getIosInfo();
+        }
+      }
     } catch (e) {
       debugPrint(e.toString());
     }
