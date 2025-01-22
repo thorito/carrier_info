@@ -1,4 +1,7 @@
 
+## 3.0.4
+* Updated dependencies.
+
 ## 3.0.1
 * Modified the 'networkGeneration' field to include the 'radioType'
 * If there is no SIM card connected, do not throw an exception.

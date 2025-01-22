@@ -1,6 +1,6 @@
 name: carrier_info_example
 description: Demonstrates how to use the carrier_info plugin.
-version: 0.1.0+4
+version: 0.1.0+5
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -28,7 +28,7 @@ dependency_overrides:
   leak_tracker: ^10.0.8
   leak_tracker_flutter_testing: ^3.0.9
   material_color_utilities: ^0.12.0
-  string_scanner: ^1.4.0
+  string_scanner: ^1.4.1
   test_api: ^0.7.4
 
 flutter:
