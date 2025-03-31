@@ -1,10 +1,11 @@
 name: carrier_info
 description: Carrier Info gets networkType, networkGeneration, mobileCountryCode, mobileCountryCode, e.t.c from both android and ios devices
-version: 3.0.4
+version: 3.0.5
 homepage: https://github.com/thorito/carrier_info.git
 
 environment:
   sdk: '>=3.3.5 <4.0.0'
+  flutter: '>=3.24.5'
 
 dependencies:
   flutter_lints: ^5.0.0
@@ -17,7 +18,7 @@ dev_dependencies:
 
 dependency_overrides:
   collection: ^1.19.1
-  leak_tracker: ^10.0.8
+  leak_tracker: ^10.0.9
   leak_tracker_flutter_testing: ^3.0.9
   lints: ^5.1.1
   material_color_utilities: ^0.12.0
