@@ -28,7 +28,7 @@
 * Removal of permission checking from package, you'll need to manage permission on the mobile end 
 
 ## 2.0.8
-* Breaking changes for Multi sim suport
+* Breaking changes for Multi sim support
 * Syntax clean up
 
 ## 2.0.6
@@ -56,7 +56,7 @@
 * Updated Contribution section in Readme 
 
 ## 2.0.0
-* Added null-saftey
+* Added null-safety
 
 ## 1.0.0
 * Initial release.
