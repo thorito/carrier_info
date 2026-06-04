@@ -72,7 +72,7 @@ class MyAppState extends State<MyApp> {
             border: Border.symmetric(
               horizontal: BorderSide(
                 width: 0.5,
-                color: CupertinoColors.systemGrey2.withOpacity(0.4),
+                color: CupertinoColors.systemGrey2.withValues(alpha: 0.4),
               ),
             ),
           ),
@@ -263,7 +263,7 @@ class HomeItem extends StatelessWidget {
         child: Column(
           children: [
             if (!isFirst)
-              Container(height: 0.5, color: Colors.grey.withOpacity(0.3)),
+              Container(height: 0.5, color: Colors.grey.withValues(alpha: 0.3)),
             Padding(
               padding: const EdgeInsets.all(15),
               child: Row(

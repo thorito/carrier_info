@@ -1,4 +1,21 @@
 
+## 4.0.0
+* **BREAKING**: Migrated iOS from CocoaPods to Swift Package Manager (SPM)
+  - Removed `ios/carrier_info.podspec`
+  - Removed Objective-C bridge files (`CarrierInfoPlugin.h`, `.m`)
+  - iOS source files now located at `ios/carrier_info/Sources/carrier_info/`
+  - Requires Flutter 3.24+ with SPM enabled
+* **BREAKING**: Android minSdk increased from 16 to 21
+* Updated Android build configuration:
+  - Gradle 8.14
+  - AGP 8.11.1
+  - compileSdk 35
+  - Migrated to Built-in Kotlin (Kotlin 2.2.20)
+  - Java compatibility 17
+* Fixed null safety issue in Android `MethodCallHandlerImpl`
+* Updated example app to use SPM for iOS
+* Replaced deprecated `withOpacity` with `withValues` in example
+
 ## 3.0.4
 * Updated dependencies.
 
